@@ -102,7 +102,7 @@ func WithSticky() MethodOption {
 
 func WithRequestTimeout(millDuration time.Duration) MethodOption {
 	return func(opts *MethodOptions) {
-		opts.Method.RequestTimeout = millSeconds.String()
+		opts.Method.RequestTimeout = millDuration.String()
 	}
 }
 
