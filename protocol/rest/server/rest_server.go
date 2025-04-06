@@ -23,6 +23,7 @@ import (
 	"net/http"
 	"reflect"
 	"strconv"
+	"strings"
 )
 
 import (
@@ -105,7 +106,7 @@ func GetRouteFunc(invoker protocol.Invoker, methodConfig *rest_config.RestMethod
 		}
 		if err != nil {
 			logger.Errorf("[Go Restful] parsing http parameters error:%v", err)
-			err = resp.WriteError(http.StatusInternalServerError, errors.New(parseParameterErrorStr))
+			err = resp.WriteError(http.StatusInternalServerError, errors.New(strings.ToLower(parseParameterErrorStr)))
 			if err != nil {
 				logger.Errorf("[Go Restful] WriteErrorString error:%v", err)
 			}

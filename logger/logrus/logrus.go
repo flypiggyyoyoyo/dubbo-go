@@ -35,7 +35,7 @@ import (
 	"dubbo.apache.org/dubbo-go/v3/common"
 	"dubbo.apache.org/dubbo-go/v3/common/constant"
 	"dubbo.apache.org/dubbo-go/v3/common/extension"
-	. "dubbo.apache.org/dubbo-go/v3/logger"
+	dubbologger "dubbo.apache.org/dubbo-go/v3/logger"
 )
 
 func init() {
@@ -70,7 +70,7 @@ func instantiate(config *common.URL) (log logger.Logger, err error) {
 		case "console":
 			writer = append(writer, os.Stdout)
 		case "file":
-			file := FileConfig(config)
+			file := dubbologger.FileConfig(config)
 			writer = append(writer, colorable.NewNonColorable(file))
 		}
 	}

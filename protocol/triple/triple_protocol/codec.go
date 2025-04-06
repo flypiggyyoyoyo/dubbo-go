@@ -150,7 +150,7 @@ func (c *protoJSONCodec) Marshal(message interface{}) ([]byte, error) {
 	if !ok {
 		return nil, errNotProto(message)
 	}
-	var options protojson.MarshalOptions = protojson.MarshalOptions{
+	var options = protojson.MarshalOptions{
 		UseProtoNames: true,
 	}
 	return options.Marshal(protoMessage)

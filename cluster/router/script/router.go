@@ -157,7 +157,7 @@ func (s *ScriptRouter) Route(invokers []protocol.Invoker, _ *common.URL, invocat
 	enabled, scriptType, rawScript := s.enabled, s.scriptType, s.rawScript
 	s.mu.RUnlock()
 
-	if enabled == false || s.scriptType == "" || s.rawScript == "" {
+	if !enabled || s.scriptType == "" || s.rawScript == "" {
 		return invokers
 	}
 
