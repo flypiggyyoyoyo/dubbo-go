@@ -91,7 +91,7 @@ jobs:
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v7
       with:
-        version: 1.15.x  # 指定使用 1.15.x 版本
+        version: 1.15.x
         args: --timeout=10m
 
     - name: Codecov
