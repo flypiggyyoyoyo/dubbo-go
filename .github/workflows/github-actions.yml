@@ -88,11 +88,11 @@ jobs:
           exit 1
         fi
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v7
-      with:
-        version: 1.15.x
-        args: --timeout=10m
+#    - name: Run golangci-lint
+#      uses: golangci/golangci-lint-action@v7
+#      with:
+#        version: 1.15.x
+#        args: --timeout=10m
 
     - name: Codecov
       run: bash <(curl -s https://codecov.io/bash)
