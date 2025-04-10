@@ -88,5 +88,9 @@ jobs:
           exit 1
         fi
 
+    - name: Print golangci-lint config path
+      run: /home/runner/golangci-lint-1.54.2-linux-amd64/golangci-lint config path
+
+
     - name: Codecov
       run: bash <(curl -s https://codecov.io/bash)
